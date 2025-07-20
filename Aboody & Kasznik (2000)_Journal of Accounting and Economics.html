@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEO stock option awards and the timing of corporate voluntary disclosures</title>
+    
+        <style>
+        /* Modern Academic Paper Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            min-height: calc(100vh - 200px);
+        }
+        
+        .toc-sidebar {
+            width: 300px;
+            background: #f8f9fa;
+            border-right: 1px solid #e9ecef;
+            padding: 2rem 1.5rem;
+            position: sticky;
+            top: 0;
+            height: fit-content;
+            max-height: 100vh;
+            overflow-y: auto;
+        }
+        
+        .toc-sidebar h2 {
+            color: #495057;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .toc-sidebar ul {
+            list-style: none;
+        }
+        
+        .toc-sidebar li {
+            margin: 0.5rem 0;
+        }
+        
+        .toc-sidebar a {
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.3rem 0;
+        }
+        
+        .toc-sidebar a:hover {
+            color: #667eea;
+            padding-left: 0.5rem;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 2rem 3rem;
+            max-width: calc(100% - 300px);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: #2c3e50;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: #34495e;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: #667eea;
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+        
+        ul, ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        li {
+            margin: 0.5rem 0;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        em {
+            color: #667eea;
+            font-style: italic;
+        }
+        
+        blockquote {
+            border-left: 4px solid #667eea;
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            background: #f8f9fa;
+            font-style: italic;
+        }
+        
+        code {
+            background: #f1f3f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            color: #d63384;
+        }
+        
+        pre {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 1rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
+        
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #667eea, transparent);
+            margin: 2rem 0;
+        }
+        
+        .section-divider {
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .section-divider::before {
+            content: "◆ ◆ ◆";
+            color: #667eea;
+            font-size: 1.2rem;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .toc-sidebar {
+                width: 100%;
+                position: static;
+                max-height: none;
+            }
+            
+            .main-content {
+                max-width: 100%;
+                padding: 1.5rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .toc-sidebar {
+                display: none;
+            }
+            
+            .main-content {
+                max-width: 100%;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+        }
+        </style>
+        
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>CEO stock option awards and the timing of corporate voluntary disclosures</h1>
+            <div class="subtitle">David Aboody (UCLA), Ron Kasznik (Stanford)</div>
+        </header>
+        
+        <div class="content-wrapper">
+            <nav class="toc-sidebar">
+                <h2>Table of Contents</h2>
+                <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#1-literature-review-components">1. Literature Review Components</a></li>
+<li><a href="#2-variables-summary">2. Variables Summary</a></li>
+<li><a href="#3-methodology-summary">3. Methodology Summary</a></li>
+<li><a href="#4-theory-summary">4. Theory Summary</a></li>
+<li><a href="#5-data-source-summary">5. Data Source Summary</a></li>
+<li><a href="#6-key-empirical-findings">6. Key Empirical Findings</a></li>
+<li><a href="#7-replication-materials">7. Replication Materials</a></li>
+<li><a href="#8-discipline-specific-enhancements">8. Discipline-Specific Enhancements</a></li>
+</ul>
+</div>
+
+            </nav>
+            
+            <main class="main-content">
+                <h3 id="1-literature-review-components"><a class="toclink" href="#1-literature-review-components">1. <strong>Literature Review Components</strong></a><a class="headerlink" href="#1-literature-review-components" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Title</strong>: CEO stock option awards and the timing of corporate voluntary disclosures  </li>
+<li><strong>Journal</strong>: <em>Journal of Accounting and Economics</em>  </li>
+<li><strong>Authors</strong>: David Aboody (UCLA), Ron Kasznik (Stanford)  </li>
+<li><strong>In-text Citation Format</strong>: Aboody &amp; Kasznik (2000)  </li>
+<li><strong>Overview</strong>: Examines whether CEOs manipulate the timing of voluntary disclosures around scheduled stock option awards to maximize compensation. Uses analyst forecasts, stock returns, and management earnings forecasts to test hypotheses.  </li>
+<li><strong>Key Contribution to Field</strong>:  </li>
+<li>First empirical evidence that CEOs strategically time disclosures (delay good news, accelerate bad news) around fixed-schedule option awards.  </li>
+<li>Distinguishes between opportunistic disclosure timing (for fixed-schedule awards) and opportunistic award timing (for unscheduled awards).  </li>
+<li><strong>Policy/Practical Implications</strong>:  </li>
+<li>Suggests compensation committees set award dates <em>after</em> earnings announcements to mitigate manipulation.  </li>
+<li>Highlights unintended consequences of fixed-schedule option awards.  </li>
+<li><strong>Methodology</strong>:  </li>
+<li>Event studies (abnormal returns around award dates).  </li>
+<li>Regression analysis of analyst forecast errors.  </li>
+<li>Content analysis of management earnings forecasts.  </li>
+<li><strong>Results</strong>:  </li>
+<li>Scheduled awards are preceded by insignificant negative abnormal returns and followed by significant positive returns (+1.67% over 30 days).  </li>
+<li>Analyst forecasts pre-award are less optimistically biased.  </li>
+<li>CEOs receiving awards <em>before</em> earnings announcements are more likely to issue bad news forecasts.  </li>
+<li><strong>Discussion</strong>:  </li>
+<li>Findings robust to controls for earnings surprises, firm size, and other confounders.  </li>
+<li>Contrasts with Yermack (1997), who attributes asymmetric returns to award timing (not disclosure timing).  </li>
+<li><strong>Research Gaps/Areas for Improvement</strong>:  </li>
+<li>Limited to U.S. firms (international evidence needed).  </li>
+<li>Does not quantify total shareholder costs of disclosure manipulation.  </li>
+<li><strong>Paper's Strengths and Weaknesses</strong>:  </li>
+<li><strong>Strengths</strong>: Clean identification using fixed-schedule awards; multi-method evidence.  </li>
+<li><strong>Weaknesses</strong>: Relies on inferred award dates; cannot observe all private disclosures.  </li>
+<li><strong>Limitations and Future Research</strong>:  </li>
+<li>Suggests examining CEO turnover effects, cross-country comparisons, and post-SOX changes.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="2-variables-summary"><a class="toclink" href="#2-variables-summary">2. <strong>Variables Summary</strong></a><a class="headerlink" href="#2-variables-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Dependent Variables</strong>:  </li>
+<li><em>Analyst Forecast Error (AF_ERROR)</em>: Consensus forecast minus actual EPS, scaled by price.  <ul>
+<li><em>Source</em>: I/B/E/S.  </li>
+</ul>
+</li>
+<li><em>Cumulative Abnormal Returns (CAR)</em>: Market-adjusted returns around award dates.  <ul>
+<li><em>Source</em>: CRSP.  </li>
+</ul>
+</li>
+<li><em>Management Forecast Sign</em>: Good/bad/neutral news classifications.  <ul>
+<li><em>Source</em>: LEXIS/NEXIS.  </li>
+</ul>
+</li>
+<li><strong>Independent Variables</strong>:  </li>
+<li><em>AWARD_MONTH</em>: Dummy for months with scheduled option awards.  </li>
+<li><em>BEFORE</em>: Dummy for awards pre-earnings announcements.  </li>
+<li><strong>Control Variables</strong>:  </li>
+<li><em>HORIZON</em>: Forecast horizon (months to quarter-end).  </li>
+<li><em>ΔEPS</em>: Seasonally adjusted earnings change.  </li>
+<li><em>SIZE</em>: Log market value.  </li>
+<li><em>EARNVAR</em>: Earnings volatility.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="3-methodology-summary"><a class="toclink" href="#3-methodology-summary">3. <strong>Methodology Summary</strong></a><a class="headerlink" href="#3-methodology-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Analytical Methods</strong>:  </li>
+<li>Panel OLS regressions (fixed effects for firms).  </li>
+<li>Event studies with market-adjusted returns.  </li>
+<li><strong>Model Equations</strong>:  </li>
+<li><em>AF_ERROR = β₀ + β₁AWARD_MONTH + β₂HORIZON + β₃ΔEPS + β₄SIZE + β₅EARNVAR + ε</em>  </li>
+<li><strong>Identification Strategy</strong>:  </li>
+<li>Exploits fixed-schedule awards as quasi-natural experiments.  </li>
+<li><strong>Robustness Tests</strong>:  </li>
+<li>Alternative return windows, subsamples by year, excluding year-end awards.  </li>
+<li><strong>Data Sampling</strong>:  </li>
+<li>2,039 scheduled CEO awards (572 firms, 1992–1996).  </li>
+<li>Excludes reload options and firms without CRSP data.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="4-theory-summary"><a class="toclink" href="#4-theory-summary">4. <strong>Theory Summary</strong></a><a class="headerlink" href="#4-theory-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Name of Theory</strong>: Agency Theory  </li>
+<li><strong>Origin</strong>: Jensen &amp; Meckling (1976)  </li>
+<li><strong>Description</strong>: CEOs act self-interestedly to maximize option value by manipulating disclosure timing.  </li>
+<li><strong>Application in Study</strong>: Predicts CEOs delay good news (to lower exercise price) and accelerate bad news.  </li>
+<li><strong>Competing Theories</strong>: Stewardship theory (not supported).  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="5-data-source-summary"><a class="toclink" href="#5-data-source-summary">5. <strong>Data Source Summary</strong></a><a class="headerlink" href="#5-data-source-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Primary Data</strong>:  </li>
+<li>Option awards: ExecuComp + hand-collected proxy statements.  </li>
+<li>Stock returns: CRSP.  </li>
+<li>Analyst forecasts: I/B/E/S.  </li>
+<li>Management forecasts: LEXIS/NEXIS.  </li>
+<li><strong>Temporal Coverage</strong>: 1992–1996.  </li>
+<li><strong>Sample Size</strong>: 2,039 scheduled awards (572 firms).  </li>
+<li><strong>Limitations</strong>: Survivorship bias (large firms only).  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="6-key-empirical-findings"><a class="toclink" href="#6-key-empirical-findings">6. <strong>Key Empirical Findings</strong></a><a class="headerlink" href="#6-key-empirical-findings" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Economic Significance</strong>:  </li>
+<li>CEOs gain ~$173,500 (median $52,500) per award from post-award price increases.  </li>
+<li><strong>Cross-study Comparison</strong>:  </li>
+<li>Contrasts with Yermack (1997): Evidence here points to disclosure timing, not award timing.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="7-replication-materials"><a class="toclink" href="#7-replication-materials">7. <strong>Replication Materials</strong></a><a class="headerlink" href="#7-replication-materials" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Data Availability</strong>: ExecuComp/CRSP/I/B/E/S (subscription required).  </li>
+<li><strong>Code Repository</strong>: Not available.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="8-discipline-specific-enhancements"><a class="toclink" href="#8-discipline-specific-enhancements">8. <strong>Discipline-Specific Enhancements</strong></a><a class="headerlink" href="#8-discipline-specific-enhancements" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Corporate Governance</strong>: Highlights conflicts in board oversight of CEO compensation.  </li>
+<li><strong>Financial Regulation</strong>: Implications for SEC rules on option grant disclosures.  </li>
+</ul>
+            </main>
+        </div>
+        
+        <footer class="footer">
+            <p>Created by Yuqian Zhang (PhD)</p>
+        </footer>
+    </div>
+</body>
+</html>
+        

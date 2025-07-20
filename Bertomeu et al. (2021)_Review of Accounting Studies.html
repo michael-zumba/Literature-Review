@@ -1,0 +1,449 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Literature Review</title>
+    
+        <style>
+        /* Modern Academic Paper Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            min-height: calc(100vh - 200px);
+        }
+        
+        .toc-sidebar {
+            width: 300px;
+            background: #f8f9fa;
+            border-right: 1px solid #e9ecef;
+            padding: 2rem 1.5rem;
+            position: sticky;
+            top: 0;
+            height: fit-content;
+            max-height: 100vh;
+            overflow-y: auto;
+        }
+        
+        .toc-sidebar h2 {
+            color: #495057;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .toc-sidebar ul {
+            list-style: none;
+        }
+        
+        .toc-sidebar li {
+            margin: 0.5rem 0;
+        }
+        
+        .toc-sidebar a {
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.3rem 0;
+        }
+        
+        .toc-sidebar a:hover {
+            color: #667eea;
+            padding-left: 0.5rem;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 2rem 3rem;
+            max-width: calc(100% - 300px);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: #2c3e50;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: #34495e;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: #667eea;
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+        
+        ul, ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        li {
+            margin: 0.5rem 0;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        em {
+            color: #667eea;
+            font-style: italic;
+        }
+        
+        blockquote {
+            border-left: 4px solid #667eea;
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            background: #f8f9fa;
+            font-style: italic;
+        }
+        
+        code {
+            background: #f1f3f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            color: #d63384;
+        }
+        
+        pre {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 1rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
+        
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #667eea, transparent);
+            margin: 2rem 0;
+        }
+        
+        .section-divider {
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .section-divider::before {
+            content: "◆ ◆ ◆";
+            color: #667eea;
+            font-size: 1.2rem;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .toc-sidebar {
+                width: 100%;
+                position: static;
+                max-height: none;
+            }
+            
+            .main-content {
+                max-width: 100%;
+                padding: 1.5rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .toc-sidebar {
+                display: none;
+            }
+            
+            .main-content {
+                max-width: 100%;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+        }
+        </style>
+        
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Literature Review</h1>
+            <div class="subtitle">Academic Research</div>
+        </header>
+        
+        <div class="content-wrapper">
+            <nav class="toc-sidebar">
+                <h2>Table of Contents</h2>
+                <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#1-literature-review-components">1. Literature Review Components</a></li>
+<li><a href="#2-variables-summary">2. Variables Summary</a></li>
+<li><a href="#3-methodology-summary">3. Methodology Summary</a></li>
+<li><a href="#4-theory-summary">4. Theory Summary</a></li>
+<li><a href="#5-data-source-summary">5. Data Source Summary</a></li>
+<li><a href="#6-key-empirical-findings">6. Key Empirical Findings</a></li>
+<li><a href="#7-replication-materials">7. Replication Materials</a></li>
+<li><a href="#8-discipline-specific-enhancements">8. Discipline-Specific Enhancements</a></li>
+<li><a href="#hypothesis-development">Hypothesis Development</a></li>
+</ul>
+</div>
+
+            </nav>
+            
+            <main class="main-content">
+                <h3 id="1-literature-review-components"><a class="toclink" href="#1-literature-review-components"><strong>1. Literature Review Components</strong></a><a class="headerlink" href="#1-literature-review-components" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Title:</strong> Voluntary versus mandatory disclosure  </li>
+<li><strong>Journal:</strong> Review of Accounting Studies  </li>
+<li><strong>Authors:</strong> Jeremy Bertomeu, Igor Vaysman, Wenjie Xue  </li>
+<li><strong>In-text Citation Format:</strong> Bertomeu et al. (2021)  </li>
+<li><strong>Overview:</strong> The paper develops a theory of asymmetries between voluntary and mandatory disclosure, showing that efficiently designed mandatory policies substitute for excessive voluntary disclosures. The optimal policy mandates disclosure of bad news below a threshold while allowing voluntary disclosure of good news above another threshold.  </li>
+<li><strong>Key Contribution to Field:</strong>  </li>
+<li>Theoretical justification for asymmetric (conservative) reporting standards.  </li>
+<li>Demonstrates that mandatory disclosure of bad news reduces socially excessive voluntary disclosure of intermediate news.  </li>
+<li>Extends the analysis to settings with real effects (investment, liquidations, lemons markets).  </li>
+<li><strong>Policy/Practical Implications:</strong>  </li>
+<li>Supports conservatism in accounting standards (e.g., impairment rules).  </li>
+<li>Explains why mandatory disclosures (e.g., SEC filings) often trigger negative market reactions.  </li>
+<li><strong>Methodology:</strong>  </li>
+<li>Mechanism design model with costly voluntary disclosure and mandatory disclosure thresholds.  </li>
+<li>Analyzes equilibrium under log-concave distributions (e.g., normal).  </li>
+<li>Extensions include convex payoffs, liquidation decisions, and adverse selection.  </li>
+<li><strong>Results:</strong>  </li>
+<li>Efficient policies mandate disclosure of sufficiently unfavorable news (θ<em> &lt; mode &lt; τ</em>).  </li>
+<li>Mandatory disclosure increases with information precision (σ↓ → θ*↑).  </li>
+<li>In lemons markets, mandatory disclosure mitigates adverse selection.  </li>
+<li><strong>Discussion:</strong>  </li>
+<li>Challenges symmetric recognition under IFRS by highlighting market benefits of conservatism.  </li>
+<li>Links to empirical findings (e.g., negative reactions to 8-K filings; Noh et al. 2019 on substitution effects).  </li>
+<li><strong>Research Gaps/Areas for Improvement:</strong>  </li>
+<li>Assumes perfect enforcement; future work could explore enforcement costs.  </li>
+<li>Limited to verifiable information; "soft" news is excluded.  </li>
+<li><strong>Paper's Strengths and Weaknesses:</strong>  </li>
+<li><strong>Strengths:</strong> Generalizable framework with multiple applications (investment, liquidation, lemons markets).  </li>
+<li><strong>Weaknesses:</strong> Linear pricing in baseline model; convex payoffs are an extension.  </li>
+<li><strong>Limitations and Future Research:</strong>  </li>
+<li>Endogenizing disclosure costs (e.g., proprietary costs).  </li>
+<li>Testing predictions empirically (e.g., cross-country variation in conservatism).  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="2-variables-summary"><a class="toclink" href="#2-variables-summary"><strong>2. Variables Summary</strong></a><a class="headerlink" href="#2-variables-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Dependent Variable(s):</strong>  </li>
+<li><em>Disclosure choice</em>: Binary (voluntary/mandatory/nondisclosure).  </li>
+<li><em>Market price (P)</em>: Linear in baseline; convex in extensions.  </li>
+<li><strong>Independent Variable(s):</strong>  </li>
+<li><em>News (x)</em>: Posterior expectation of asset value, drawn from a log-concave distribution (e.g., normal).  </li>
+<li><em>Disclosure cost (c)</em>: Fixed cost for voluntary/mandatory disclosure.  </li>
+<li><strong>Control Variables:</strong>  </li>
+<li><em>Verification cost (h(θ))</em>: Cost to confirm nondisclosure compliance (Section 5.1).  </li>
+<li><em>Liquidation value (δx)</em>: Opportunity cost of retaining assets (Section 4.2).  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="3-methodology-summary"><a class="toclink" href="#3-methodology-summary"><strong>3. Methodology Summary</strong></a><a class="headerlink" href="#3-methodology-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Analytical Methods:</strong>  </li>
+<li>Equilibrium analysis with threshold strategies.  </li>
+<li>Comparative statics using implicit function theorem.  </li>
+<li><strong>Model Equations:</strong>  </li>
+<li>Voluntary disclosure threshold:<br />
+    [<br />
+    \tau_\theta - c = E(x | x \notin D_m, x \leq \tau_\theta).<br />
+    ]  </li>
+<li>Optimal mandatory threshold (Eq. 3.3):<br />
+    [<br />
+    \frac{F(\tau_{\theta^<em>}) - F(\theta^</em>)}{\tau_{\theta^<em>} - \theta^</em>} = f(\tau_{\theta^*}).<br />
+    ]  </li>
+<li><strong>Identification Strategy:</strong>  </li>
+<li>Uses single-peakedness of distributions to ensure uniqueness.  </li>
+<li><strong>Robustness Tests:</strong>  </li>
+<li>Log-concavity ensures global optimality.  </li>
+<li>Extensions with convex payoffs, liquidation, and lemons markets.  </li>
+<li><strong>Data Sampling:</strong> Theoretical model; no empirical data.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="4-theory-summary"><a class="toclink" href="#4-theory-summary"><strong>4. Theory Summary</strong></a><a class="headerlink" href="#4-theory-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Name of Theory:</strong> Costly voluntary disclosure with mandatory regulation.  </li>
+<li><strong>Origin of Theory:</strong> Extends Jovanovic (1982), Verrecchia (1983).  </li>
+<li><strong>Description:</strong> Firms optimally disclose news to maximize value, accounting for disclosure costs and regulatory thresholds.  </li>
+<li><strong>Application in Study:</strong>  </li>
+<li>Mandatory disclosure mitigates negative externality of excessive voluntary disclosure.  </li>
+<li><strong>Empirical Validation:</strong> Consistent with negative market reactions to mandatory disclosures (Lerman &amp; Livnat 2010).  </li>
+<li><strong>Competing Theories:</strong>  </li>
+<li>Full unraveling (Milgrom 1981) vs. partial disclosure here.  </li>
+<li>Competing explanations for conservatism (e.g., contracting vs. market efficiency).  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="5-data-source-summary"><a class="toclink" href="#5-data-source-summary"><strong>5. Data Source Summary</strong></a><a class="headerlink" href="#5-data-source-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Variables:</strong> All derived theoretically; no empirical data.  </li>
+<li><strong>Temporal Coverage:</strong> Not applicable.  </li>
+<li><strong>Sample Selection Criteria:</strong> Not applicable.  </li>
+<li><strong>Data Limitations:</strong> Assumes perfect enforcement and verifiability.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="6-key-empirical-findings"><a class="toclink" href="#6-key-empirical-findings"><strong>6. Key Empirical Findings</strong></a><a class="headerlink" href="#6-key-empirical-findings" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Statistical vs. Economic Significance:</strong>  </li>
+<li>Mandatory disclosures are statistically associated with negative news (θ* &lt; mode).  </li>
+<li>Economic significance depends on disclosure cost (c) and distribution shape.  </li>
+<li><strong>Cross-study Comparison:</strong>  </li>
+<li>Contrasts with Heinle &amp; Verrecchia (2015): Focus on ex-ante commitment.  </li>
+<li>Differs from Suijs (2005): Bad news disclosure due to regulation, not verification costs.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="7-replication-materials"><a class="toclink" href="#7-replication-materials"><strong>7. Replication Materials</strong></a><a class="headerlink" href="#7-replication-materials" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Data Availability:</strong> Theoretical model; no data.  </li>
+<li><strong>Code Repository:</strong> Not applicable.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="8-discipline-specific-enhancements"><a class="toclink" href="#8-discipline-specific-enhancements"><strong>8. Discipline-Specific Enhancements</strong></a><a class="headerlink" href="#8-discipline-specific-enhancements" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>GAAP/IFRS Standards:</strong>  </li>
+<li>Supports asymmetric recognition (e.g., impairments) under GAAP vs. IFRS.  </li>
+<li><strong>Corporate Governance Mechanism:</strong>  </li>
+<li>Mandatory disclosure as a commitment device to reduce excessive voluntary disclosure.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="hypothesis-development"><a class="toclink" href="#hypothesis-development"><strong>Hypothesis Development</strong></a><a class="headerlink" href="#hypothesis-development" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>H1:</strong> Mandatory disclosure of bad news increases firm value.  </li>
+<li><strong>Prediction Direction:</strong> +  </li>
+<li><strong>Supported?</strong> Yes (Proposition 1).  </li>
+</ul>
+            </main>
+        </div>
+        
+        <footer class="footer">
+            <p>Created by Yuqian Zhang (PhD)</p>
+        </footer>
+    </div>
+</body>
+</html>
+        

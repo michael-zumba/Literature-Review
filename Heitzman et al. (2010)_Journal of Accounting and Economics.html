@@ -1,0 +1,484 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Joint Effects of Materiality Thresholds and Voluntary Disclosure Incentives on Firms’ Disclosure Decisions</title>
+    
+        <style>
+        /* Modern Academic Paper Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            min-height: calc(100vh - 200px);
+        }
+        
+        .toc-sidebar {
+            width: 300px;
+            background: #f8f9fa;
+            border-right: 1px solid #e9ecef;
+            padding: 2rem 1.5rem;
+            position: sticky;
+            top: 0;
+            height: fit-content;
+            max-height: 100vh;
+            overflow-y: auto;
+        }
+        
+        .toc-sidebar h2 {
+            color: #495057;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .toc-sidebar ul {
+            list-style: none;
+        }
+        
+        .toc-sidebar li {
+            margin: 0.5rem 0;
+        }
+        
+        .toc-sidebar a {
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.3rem 0;
+        }
+        
+        .toc-sidebar a:hover {
+            color: #667eea;
+            padding-left: 0.5rem;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 2rem 3rem;
+            max-width: calc(100% - 300px);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: #2c3e50;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: #34495e;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: #667eea;
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+        
+        ul, ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        li {
+            margin: 0.5rem 0;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        em {
+            color: #667eea;
+            font-style: italic;
+        }
+        
+        blockquote {
+            border-left: 4px solid #667eea;
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            background: #f8f9fa;
+            font-style: italic;
+        }
+        
+        code {
+            background: #f1f3f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            color: #d63384;
+        }
+        
+        pre {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 1rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
+        
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #667eea, transparent);
+            margin: 2rem 0;
+        }
+        
+        .section-divider {
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .section-divider::before {
+            content: "◆ ◆ ◆";
+            color: #667eea;
+            font-size: 1.2rem;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .toc-sidebar {
+                width: 100%;
+                position: static;
+                max-height: none;
+            }
+            
+            .main-content {
+                max-width: 100%;
+                padding: 1.5rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .toc-sidebar {
+                display: none;
+            }
+            
+            .main-content {
+                max-width: 100%;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+        }
+        </style>
+        
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>The Joint Effects of Materiality Thresholds and Voluntary Disclosure Incentives on Firms’ Disclosure Decisions</h1>
+            <div class="subtitle">Shane Heitzman, Charles Wasley, Jerold Zimmerman</div>
+        </header>
+        
+        <div class="content-wrapper">
+            <nav class="toc-sidebar">
+                <h2>Table of Contents</h2>
+                <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#1-literature-review-components">1. Literature Review Components</a></li>
+<li><a href="#2-variables-summary">2. Variables Summary</a></li>
+<li><a href="#3-methodology-summary">3. Methodology Summary</a></li>
+<li><a href="#4-theory-summary">4. Theory Summary</a></li>
+<li><a href="#5-data-source-summary">5. Data Source Summary</a></li>
+<li><a href="#6-key-empirical-findings">6. Key Empirical Findings</a></li>
+<li><a href="#7-replication-materials">7. Replication Materials</a></li>
+<li><a href="#8-discipline-specific-enhancements">8. Discipline-Specific Enhancements</a></li>
+</ul>
+</div>
+
+            </nav>
+            
+            <main class="main-content">
+                <h3 id="1-literature-review-components"><a class="toclink" href="#1-literature-review-components">1. <strong>Literature Review Components</strong></a><a class="headerlink" href="#1-literature-review-components" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Title</strong>: The Joint Effects of Materiality Thresholds and Voluntary Disclosure Incentives on Firms’ Disclosure Decisions  </li>
+<li><strong>Journal</strong>: Journal of Accounting and Economics  </li>
+<li><strong>Authors</strong>: Shane Heitzman, Charles Wasley, Jerold Zimmerman  </li>
+<li><strong>In-text Citation Format</strong>: Heitzman et al. (2010)  </li>
+<li><strong>Overview</strong>: This paper examines how materiality thresholds and voluntary disclosure incentives jointly influence firms' disclosure decisions, using advertising expense disclosures before and after an SEC rule change (FRR 44) as the empirical setting.  </li>
+<li><strong>Key Contribution to Field</strong>: The study is the first to explicitly model and test the joint effects of materiality obligations and voluntary disclosure incentives, demonstrating that ignoring materiality can lead to incorrect inferences in voluntary disclosure research.  </li>
+<li><strong>Policy/Practical Implications</strong>: The findings suggest regulators and standard-setters should consider how materiality thresholds interact with voluntary disclosure incentives when designing disclosure requirements.  </li>
+<li><strong>Methodology</strong>: The authors use a partial observability discrete choice model to separately identify materiality-driven and voluntary disclosures, along with logistic regressions and sample partitioning based on advertising intensity.  </li>
+<li><strong>Results</strong>:  <ul>
+<li>Materiality considerations dominate disclosure decisions when advertising is significant (high advertising-to-sales ratios).  </li>
+<li>Voluntary disclosure incentives (e.g., future debt issues, litigation risk) better explain disclosures when advertising is likely immaterial.  </li>
+<li>The combined model has greater explanatory power than pure materiality or pure voluntary disclosure specifications.  </li>
+</ul>
+</li>
+<li><strong>Discussion</strong>: The results highlight the importance of controlling for materiality in voluntary disclosure research to avoid mischaracterizing mandatory disclosures as voluntary.  </li>
+<li><strong>Research Gaps/Areas for Improvement</strong>: The study focuses on advertising disclosures; future research could examine other disclosure settings to generalize the findings.  </li>
+<li><strong>Paper's Strengths and Weaknesses</strong>:  <ul>
+<li><em>Strengths</em>: Novel theoretical framework, clean empirical setting (FRR 44), robust methodology.  </li>
+<li><em>Weaknesses</em>: Limited to one type of disclosure (advertising); materiality thresholds are unobservable.  </li>
+</ul>
+</li>
+<li><strong>Limitations and Future Research</strong>:  <ul>
+<li>Suggests examining other disclosure settings (e.g., contingent liabilities) and exploring cross-country differences in materiality standards.  </li>
+</ul>
+</li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="2-variables-summary"><a class="toclink" href="#2-variables-summary">2. <strong>Variables Summary</strong></a><a class="headerlink" href="#2-variables-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Dependent Variable(s)</strong>:  <ul>
+<li><em>Disclosure of advertising costs</em>: Binary variable (1 if disclosed, 0 otherwise).  </li>
+<li>Measurement: Reported in 10-K filings.  </li>
+<li>Economic Significance: Captures compliance with materiality thresholds and voluntary disclosure incentives.  </li>
+<li>Data Source: COMPUSTAT.  </li>
+</ul>
+</li>
+<li><strong>Independent Variable(s)</strong>:  <ul>
+<li><em>Advertising-to-sales ratio (A/S)</em>: Proxy for materiality.  </li>
+<li>Measurement: Advertising expense / sales.  </li>
+<li>Data Source: COMPUSTAT.  </li>
+<li><em>Earnings Response Coefficient (ERC)</em>: Proxy for investor sensitivity to disclosures.  </li>
+<li>Measurement: Firm-specific slope from returns-earnings regression.  </li>
+<li>Data Source: CRSP, COMPUSTAT.  </li>
+<li><em>Future debt/equity issues</em>: Proxy for capital market benefits.  </li>
+<li>Measurement: Binary indicators for issuance in the next 3 years.  </li>
+<li>Data Source: COMPUSTAT, SDC.  </li>
+<li><em>Litigation risk</em>: Binary indicator for high-litigation industries.  </li>
+<li>Measurement: Based on Francis et al. (1994) industry classifications.  </li>
+<li>Data Source: SIC codes.  </li>
+</ul>
+</li>
+<li><strong>Control Variables</strong>:  <ul>
+<li><em>Firm size (ln(Sales))</em>: Controls for scale effects.  </li>
+<li>Justification: Larger firms may face greater disclosure demands.  </li>
+<li>Data Source: COMPUSTAT.  </li>
+<li><em>Industry concentration (Herfindahl index)</em>: Proxy for proprietary costs.  </li>
+<li>Data Source: COMPUSTAT segment data.  </li>
+</ul>
+</li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="3-methodology-summary"><a class="toclink" href="#3-methodology-summary">3. <strong>Methodology Summary</strong></a><a class="headerlink" href="#3-methodology-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Analytical Methods</strong>:  <ul>
+<li>Logistic regression for binary disclosure outcomes.  </li>
+<li>Partial observability model to disentangle materiality and voluntary disclosure effects.  </li>
+</ul>
+</li>
+<li><strong>Model Equations</strong>:  <ul>
+<li><em>Logit model</em>:<br />
+   ( \text{Pr(Disclosure)} = \text{logit}(\beta_0 + \beta_1 \ln(A/S) + \beta_2 \text{ERC} + \beta_3 \text{Controls}) ).  </li>
+<li><em>Partial observability model</em>:<br />
+   Combines materiality and voluntary disclosure processes (Eqs. 3a and 6 in the paper).  </li>
+</ul>
+</li>
+<li><strong>Identification Strategy</strong>:  <ul>
+<li>Uses the SEC’s FRR 44 rule change as a quasi-natural experiment.  </li>
+<li>Advertising intensity (A/S) and ERC serve as proxies for materiality and investor sensitivity.  </li>
+</ul>
+</li>
+<li><strong>Robustness Tests</strong>:  <ul>
+<li>Alternative ERC specifications (raw vs. ranked).  </li>
+<li>Partitioning sample by advertising intensity.  </li>
+</ul>
+</li>
+<li><strong>Data Sampling</strong>:  <ul>
+<li>Sample: 1,184 firms disclosing advertising pre-FRR 44 (1994).  </li>
+<li>Time period: Pre- and post-FRR 44 (1990s).  </li>
+</ul>
+</li>
+<li><strong>Software/Tools Used</strong>: Likely Stata (given the econometric methods).  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="4-theory-summary"><a class="toclink" href="#4-theory-summary">4. <strong>Theory Summary</strong></a><a class="headerlink" href="#4-theory-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Name of Theory</strong>: Integrated Disclosure Theory (Materiality + Voluntary Disclosure).  </li>
+<li><strong>Origin of Theory</strong>: Builds on Verrecchia (1983) voluntary disclosure theory and legal/materiality standards (e.g., TSC Industries v. Northway).  </li>
+<li><strong>Description of Theory</strong>: Firms disclose if (1) information is material (mandatory) or (2) immaterial but benefits exceed costs (voluntary).  </li>
+<li><strong>Application in Study</strong>: Tests the theory using advertising disclosures post-FRR 44.  </li>
+<li><strong>Empirical Validation</strong>: Supported; voluntary incentives matter only when materiality thresholds are not binding.  </li>
+<li><strong>Competing Theories Considered</strong>: Pure voluntary disclosure theory (no materiality), pure materiality theory (no voluntary incentives).  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="5-data-source-summary"><a class="toclink" href="#5-data-source-summary">5. <strong>Data Source Summary</strong></a><a class="headerlink" href="#5-data-source-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Dependent Variables</strong>:  <ul>
+<li>Advertising disclosure: COMPUSTAT.  </li>
+</ul>
+</li>
+<li><strong>Independent Variables</strong>:  <ul>
+<li>Advertising expense, sales, ERC: COMPUSTAT, CRSP.  </li>
+<li>Debt/equity issues: COMPUSTAT, SDC.  </li>
+</ul>
+</li>
+<li><strong>Temporal Coverage</strong>: 1990–2000 (centered on FRR 44 in 1994).  </li>
+<li><strong>Sample Selection Criteria</strong>: Firms disclosing advertising pre-FRR 44 with sufficient data.  </li>
+<li><strong>Sample Size</strong>: 1,184 firms.  </li>
+<li><strong>Data Limitations</strong>: Advertising data is annual; materiality thresholds are unobservable.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="6-key-empirical-findings"><a class="toclink" href="#6-key-empirical-findings">6. <strong>Key Empirical Findings</strong></a><a class="headerlink" href="#6-key-empirical-findings" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Statistical vs. Economic Significance</strong>:  <ul>
+<li>Materiality (A/S) and ERC are statistically and economically significant.  </li>
+</ul>
+</li>
+<li><strong>Magnitude Interpretation</strong>:  <ul>
+<li>1 SD increase in A/S increases disclosure probability by 7.4%.  </li>
+</ul>
+</li>
+<li><strong>Cross-study Comparison</strong>:  <ul>
+<li>Consistent with Skinner (1994) on litigation risk; contrasts with pure voluntary disclosure studies.  </li>
+</ul>
+</li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="7-replication-materials"><a class="toclink" href="#7-replication-materials">7. <strong>Replication Materials</strong></a><a class="headerlink" href="#7-replication-materials" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Data Availability</strong>: COMPUSTAT, CRSP, SDC (subscription required).  </li>
+<li><strong>Code Repository</strong>: Not mentioned.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="8-discipline-specific-enhancements"><a class="toclink" href="#8-discipline-specific-enhancements">8. <strong>Discipline-Specific Enhancements</strong></a><a class="headerlink" href="#8-discipline-specific-enhancements" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>GAAP/IFRS Standards</strong>: Focuses on U.S. GAAP materiality rules (e.g., SEC FRR 44).  </li>
+<li><strong>Corporate Governance Mechanism</strong>: Highlights auditor/manager materiality judgments.  </li>
+<li><strong>Financial Regulation Context</strong>: SEC disclosure rules and litigation risk.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<p><strong>Hypothesis Development</strong>:<br />
+- H1: Firms with higher advertising intensity (more material) are more likely to disclose.<br />
+  - Prediction Direction: +<br />
+  - Supported: Yes.<br />
+- H2: Voluntary disclosure incentives matter only when materiality is low.<br />
+  - Prediction Direction: +<br />
+  - Supported: Yes.  </p>
+            </main>
+        </div>
+        
+        <footer class="footer">
+            <p>Created by Yuqian Zhang (PhD)</p>
+        </footer>
+    </div>
+</body>
+</html>
+        

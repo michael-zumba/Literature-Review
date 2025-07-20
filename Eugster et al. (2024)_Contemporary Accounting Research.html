@@ -1,0 +1,489 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Literature Review</title>
+    
+        <style>
+        /* Modern Academic Paper Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            min-height: calc(100vh - 200px);
+        }
+        
+        .toc-sidebar {
+            width: 300px;
+            background: #f8f9fa;
+            border-right: 1px solid #e9ecef;
+            padding: 2rem 1.5rem;
+            position: sticky;
+            top: 0;
+            height: fit-content;
+            max-height: 100vh;
+            overflow-y: auto;
+        }
+        
+        .toc-sidebar h2 {
+            color: #495057;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .toc-sidebar ul {
+            list-style: none;
+        }
+        
+        .toc-sidebar li {
+            margin: 0.5rem 0;
+        }
+        
+        .toc-sidebar a {
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.3rem 0;
+        }
+        
+        .toc-sidebar a:hover {
+            color: #667eea;
+            padding-left: 0.5rem;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 2rem 3rem;
+            max-width: calc(100% - 300px);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: #2c3e50;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: #34495e;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: #667eea;
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+        
+        ul, ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        li {
+            margin: 0.5rem 0;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        em {
+            color: #667eea;
+            font-style: italic;
+        }
+        
+        blockquote {
+            border-left: 4px solid #667eea;
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            background: #f8f9fa;
+            font-style: italic;
+        }
+        
+        code {
+            background: #f1f3f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            color: #d63384;
+        }
+        
+        pre {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 1rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
+        
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #667eea, transparent);
+            margin: 2rem 0;
+        }
+        
+        .section-divider {
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .section-divider::before {
+            content: "◆ ◆ ◆";
+            color: #667eea;
+            font-size: 1.2rem;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .toc-sidebar {
+                width: 100%;
+                position: static;
+                max-height: none;
+            }
+            
+            .main-content {
+                max-width: 100%;
+                padding: 1.5rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .toc-sidebar {
+                display: none;
+            }
+            
+            .main-content {
+                max-width: 100%;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+        }
+        </style>
+        
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Literature Review</h1>
+            <div class="subtitle">Academic Research</div>
+        </header>
+        
+        <div class="content-wrapper">
+            <nav class="toc-sidebar">
+                <h2>Table of Contents</h2>
+                <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#1-literature-review-components">1. Literature Review Components</a></li>
+<li><a href="#2-variables-summary">2. Variables Summary</a></li>
+<li><a href="#3-methodology-summary">3. Methodology Summary</a></li>
+<li><a href="#4-theory-summary">4. Theory Summary</a></li>
+<li><a href="#5-data-source-summary">5. Data Source Summary</a></li>
+<li><a href="#6-key-empirical-findings">6. Key Empirical Findings</a></li>
+<li><a href="#7-replication-materials">7. Replication Materials</a></li>
+<li><a href="#8-discipline-specific-enhancements">8. Discipline-Specific Enhancements</a></li>
+<li><a href="#hypothesis-development">Hypothesis Development</a></li>
+</ul>
+</div>
+
+            </nav>
+            
+            <main class="main-content">
+                <h3 id="1-literature-review-components"><a class="toclink" href="#1-literature-review-components"><strong>1. Literature Review Components</strong></a><a class="headerlink" href="#1-literature-review-components" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Title:</strong> Managerial Extraversion and Corporate Voluntary Disclosure  </li>
+<li><strong>Journal:</strong> <em>Contemporary Accounting Research</em>  </li>
+<li><strong>Authors:</strong> Florian Eugster, Jenni Kallunki, Juha-Pekka Kallunki, Henrik Nilsson  </li>
+<li><strong>In-text Citation Format:</strong> Eugster et al. (2024)  </li>
+<li><strong>Overview:</strong>  </li>
+<li>Examines how CEOs' and CFOs' personality trait of extraversion (measured via psychological tests) influences corporate voluntary disclosure.  </li>
+<li>
+<p>Uses Swedish military enlistment data (extraversion scores) and firm-level disclosure rankings (1999–2015).  </p>
+</li>
+<li>
+<p><strong>Key Contribution to Field:</strong>  </p>
+</li>
+<li>Provides <strong>novel empirical evidence</strong> linking managerial extraversion to higher voluntary disclosure.  </li>
+<li>Addresses <strong>endogeneity concerns</strong> by using pre-career psychological test scores (unaffected by firm-specific factors).  </li>
+<li>
+<p>Expands on prior studies (e.g., Liao et al., 2023) by using a <strong>comprehensive disclosure score</strong> (financial/non-financial) and <strong>longitudinal data</strong>.  </p>
+</li>
+<li>
+<p><strong>Policy/Practical Implications:</strong>  </p>
+</li>
+<li>Suggests that <strong>personality assessments</strong> of executives could inform stakeholder expectations about disclosure practices.  </li>
+<li>
+<p>Highlights the role of <strong>managerial discretion</strong> and <strong>job demands</strong> in amplifying extraversion effects.  </p>
+</li>
+<li>
+<p><strong>Methodology:</strong>  </p>
+</li>
+<li><strong>Data:</strong> 1,905 firm-years, 225 Swedish firms, 578 CEOs/CFOs.  </li>
+<li><strong>Variables:</strong>  <ul>
+<li><strong>Dependent:</strong> Voluntary disclosure scores (total/annual/quarterly/website).  </li>
+<li><strong>Independent:</strong> Extraversion (1–5 scale from military tests).  </li>
+<li><strong>Controls:</strong> Managerial (IQ, tenure, education) and firm-level (size, ROA, leverage) factors.  </li>
+</ul>
+</li>
+<li>
+<p><strong>Models:</strong> OLS regressions with firm/year fixed effects, robustness tests (e.g., subsamples, endogeneity checks).  </p>
+</li>
+<li>
+<p><strong>Results:</strong>  </p>
+</li>
+<li><strong>Positive association</strong> between extraversion and voluntary disclosure (e.g., 1 SD ↑ in extraversion → 9.4% ↑ in disclosure score).  </li>
+<li>Effects stronger for <strong>CEOs</strong> (vs. CFOs) and under <strong>high discretion</strong> (long tenure, concentrated industries) or <strong>high job demands</strong> (IFRS adoption).  </li>
+<li>
+<p>Extraverted managers <strong>speak more</strong>, provide <strong>more forward-looking disclosures</strong>, and use <strong>more optimistic tones</strong> in earnings calls.  </p>
+</li>
+<li>
+<p><strong>Discussion:</strong>  </p>
+</li>
+<li>Supports <strong>upper echelons theory</strong>: Managers’ traits shape firm outcomes.  </li>
+<li>
+<p>Extraversion’s stability (from age 18) suggests <strong>long-term impact</strong> on disclosure policies.  </p>
+</li>
+<li>
+<p><strong>Research Gaps/Areas for Improvement:</strong>  </p>
+</li>
+<li>Limited to <strong>Swedish male executives</strong> (generalizability concerns).  </li>
+<li>
+<p>Future research could explore <strong>female managers</strong> or <strong>cross-country comparisons</strong>.  </p>
+</li>
+<li>
+<p><strong>Paper’s Strengths and Weaknesses:</strong>  </p>
+</li>
+<li><strong>Strengths:</strong> Unique extraversion measure, robust controls, multi-channel disclosure analysis.  </li>
+<li>
+<p><strong>Weaknesses:</strong> Reliance on military data (may not capture post-adolescent personality changes).  </p>
+</li>
+<li>
+<p><strong>Limitations and Future Research:</strong>  </p>
+</li>
+<li>Replicate in other jurisdictions with diverse gender representation.  </li>
+<li>Investigate interactions between extraversion and other traits (e.g., narcissism).  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="2-variables-summary"><a class="toclink" href="#2-variables-summary"><strong>2. Variables Summary</strong></a><a class="headerlink" href="#2-variables-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Dependent Variables:</strong>  </li>
+<li><strong>DISC_T (Total Disclosure Score):</strong> Scaled sum of annual/quarterly/website disclosure rankings.  <ul>
+<li><em>Source:</em> Swedish Stockholders’ Association (SSA) and Kanton.  </li>
+</ul>
+</li>
+<li>
+<p><strong>DISC_A/DISC_Q/DISC_W:</strong> Sub-scores for annual/quarterly/website disclosures.  </p>
+</li>
+<li>
+<p><strong>Independent Variable:</strong>  </p>
+</li>
+<li>
+<p><strong>EXTRAVERSION:</strong> CEO/CFO extraversion (1–5 scale from military psychologist assessments).  </p>
+<ul>
+<li><em>Source:</em> Swedish Military Forces.  </li>
+</ul>
+</li>
+<li>
+<p><strong>Control Variables:</strong>  </p>
+</li>
+<li><strong>Managerial:</strong> IQ, height, education (business/law degrees), tenure, age.  </li>
+<li><strong>Firm-Level:</strong> Size, leverage, ROA, analyst coverage, IFRS adoption.  <ul>
+<li><em>Sources:</em> Compustat, I/B/E/S, Thomson Reuters.  </li>
+</ul>
+</li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="3-methodology-summary"><a class="toclink" href="#3-methodology-summary"><strong>3. Methodology Summary</strong></a><a class="headerlink" href="#3-methodology-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Analytical Method:</strong> Panel OLS with firm/year fixed effects.  </li>
+<li><strong>Model Equation:</strong><br />
+  [
+  \text{DISCLOSURE}<em jt="jt">{jt} = \alpha + \beta_1 \text{EXTRAVERSION}_i + \gamma X + \text{Firm/Year FE} + \epsilon</em>
+  ]</li>
+<li><strong>Identification Strategy:</strong>  </li>
+<li>Extraversion scores pre-date corporate roles (mitigates reverse causality).  </li>
+<li>Firm FE controls for time-invariant heterogeneity.  </li>
+<li><strong>Robustness Tests:</strong>  </li>
+<li>Excluding low-extraversion managers.  </li>
+<li>Partitioned samples (e.g., high vs. low discretion).  </li>
+<li><strong>Software/Tools:</strong> Stata (standard errors clustered by firm).  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="4-theory-summary"><a class="toclink" href="#4-theory-summary"><strong>4. Theory Summary</strong></a><a class="headerlink" href="#4-theory-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Name of Theory:</strong> Upper Echelons Theory (Hambrick &amp; Mason, 1984).  </li>
+<li><strong>Origin:</strong> Strategic management literature.  </li>
+<li><strong>Description:</strong> Top executives’ backgrounds/traits influence organizational outcomes.  </li>
+<li><strong>Application:</strong> Extraverted managers → higher disclosure due to sociability/dominance traits.  </li>
+<li><strong>Competing Theories:</strong> Stewardship theory (not supported; extraversion effects persist).  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="5-data-source-summary"><a class="toclink" href="#5-data-source-summary"><strong>5. Data Source Summary</strong></a><a class="headerlink" href="#5-data-source-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Temporal Coverage:</strong> 1999–2015.  </li>
+<li><strong>Sample Selection:</strong> Swedish listed firms with CEO/CFO changes.  </li>
+<li><strong>Data Cleaning:</strong> Winsorized at 1%/99%, extrapolated missing 2006 data.  </li>
+<li><strong>Limitations:</strong> Male-only sample (military conscription bias).  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="6-key-empirical-findings"><a class="toclink" href="#6-key-empirical-findings"><strong>6. Key Empirical Findings</strong></a><a class="headerlink" href="#6-key-empirical-findings" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Statistical Significance:</strong> Extraversion coefficients significant at 1–5% levels.  </li>
+<li><strong>Economic Significance:</strong> 1 SD ↑ in extraversion → 0.014 ↑ in DISC_T (~9.4% of SD).  </li>
+<li><strong>Cross-study Comparison:</strong> Consistent with Liao et al. (2023) but uses exogenous trait measures.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="7-replication-materials"><a class="toclink" href="#7-replication-materials"><strong>7. Replication Materials</strong></a><a class="headerlink" href="#7-replication-materials" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Data Availability:</strong> Military data restricted; firm-level data from SSA/Compustat.  </li>
+<li><strong>Code Repository:</strong> Not mentioned.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="8-discipline-specific-enhancements"><a class="toclink" href="#8-discipline-specific-enhancements"><strong>8. Discipline-Specific Enhancements</strong></a><a class="headerlink" href="#8-discipline-specific-enhancements" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>GAAP/IFRS:</strong> Controls for IFRS adoption effects.  </li>
+<li><strong>Corporate Governance:</strong> Links extraversion to disclosure under high discretion.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="hypothesis-development"><a class="toclink" href="#hypothesis-development"><strong>Hypothesis Development</strong></a><a class="headerlink" href="#hypothesis-development" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>H1:</strong> Extraversion → + disclosure (<strong>Supported</strong>).  </li>
+<li><strong>H2:</strong> High discretion strengthens H1 (<strong>Supported</strong>).  </li>
+<li><strong>H3:</strong> High job demands strengthen H1 (<strong>Partially supported</strong>).  </li>
+</ul>
+            </main>
+        </div>
+        
+        <footer class="footer">
+            <p>Created by Yuqian Zhang (PhD)</p>
+        </footer>
+    </div>
+</body>
+</html>
+        

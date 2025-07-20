@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A new era of voluntary disclosure? Empirical evidence on how employee postings on social media relate to future corporate disclosures</title>
+    
+        <style>
+        /* Modern Academic Paper Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            min-height: calc(100vh - 200px);
+        }
+        
+        .toc-sidebar {
+            width: 300px;
+            background: #f8f9fa;
+            border-right: 1px solid #e9ecef;
+            padding: 2rem 1.5rem;
+            position: sticky;
+            top: 0;
+            height: fit-content;
+            max-height: 100vh;
+            overflow-y: auto;
+        }
+        
+        .toc-sidebar h2 {
+            color: #495057;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .toc-sidebar ul {
+            list-style: none;
+        }
+        
+        .toc-sidebar li {
+            margin: 0.5rem 0;
+        }
+        
+        .toc-sidebar a {
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.3rem 0;
+        }
+        
+        .toc-sidebar a:hover {
+            color: #667eea;
+            padding-left: 0.5rem;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 2rem 3rem;
+            max-width: calc(100% - 300px);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: #2c3e50;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: #34495e;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: #667eea;
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+        
+        ul, ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        li {
+            margin: 0.5rem 0;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        em {
+            color: #667eea;
+            font-style: italic;
+        }
+        
+        blockquote {
+            border-left: 4px solid #667eea;
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            background: #f8f9fa;
+            font-style: italic;
+        }
+        
+        code {
+            background: #f1f3f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            color: #d63384;
+        }
+        
+        pre {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 1rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
+        
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #667eea, transparent);
+            margin: 2rem 0;
+        }
+        
+        .section-divider {
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .section-divider::before {
+            content: "◆ ◆ ◆";
+            color: #667eea;
+            font-size: 1.2rem;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .toc-sidebar {
+                width: 100%;
+                position: static;
+                max-height: none;
+            }
+            
+            .main-content {
+                max-width: 100%;
+                padding: 1.5rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .toc-sidebar {
+                display: none;
+            }
+            
+            .main-content {
+                max-width: 100%;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+        }
+        </style>
+        
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>A new era of voluntary disclosure? Empirical evidence on how employee postings on social media relate to future corporate disclosures</h1>
+            <div class="subtitle">Jeffrey Hales, James R. Moon Jr., Laura A. Swenson</div>
+        </header>
+        
+        <div class="content-wrapper">
+            <nav class="toc-sidebar">
+                <h2>Table of Contents</h2>
+                <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#1-literature-review-components">1. Literature Review Components</a></li>
+<li><a href="#2-variables-summary">2. Variables Summary</a></li>
+<li><a href="#3-methodology-summary">3. Methodology Summary</a></li>
+<li><a href="#4-theory-summary">4. Theory Summary</a></li>
+<li><a href="#5-data-source-summary">5. Data Source Summary</a></li>
+<li><a href="#6-key-empirical-findings">6. Key Empirical Findings</a></li>
+<li><a href="#7-replication-materials">7. Replication Materials</a></li>
+<li><a href="#8-discipline-specific-enhancements">8. Discipline-Specific Enhancements</a></li>
+<li><a href="#hypothesis-development">Hypothesis Development</a></li>
+</ul>
+</div>
+
+            </nav>
+            
+            <main class="main-content">
+                <h3 id="1-literature-review-components"><a class="toclink" href="#1-literature-review-components">1. <strong>Literature Review Components</strong></a><a class="headerlink" href="#1-literature-review-components" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Title</strong>: A new era of voluntary disclosure? Empirical evidence on how employee postings on social media relate to future corporate disclosures  </li>
+<li><strong>Journal</strong>: <em>Accounting, Organizations and Society</em>  </li>
+<li><strong>Authors</strong>: Jeffrey Hales, James R. Moon Jr., Laura A. Swenson  </li>
+<li><strong>In-text Citation Format</strong>: Hales et al. (2018)  </li>
+<li><strong>Overview</strong>: The study examines whether employee reviews on Glassdoor.com, a social media platform, contain information predictive of future corporate disclosures (both mandatory and voluntary).  </li>
+<li><strong>Key Contribution to Field</strong>: Provides empirical evidence that rank-and-file employees’ social media postings can serve as an alternative disclosure channel, challenging the traditional view that voluntary disclosures are solely managed by executives.  </li>
+<li><strong>Policy/Practical Implications</strong>: Suggests that employee opinions on social media can inform investors, analysts, and auditors, reducing information asymmetry. Regulators may need to consider the role of such platforms in disclosure ecosystems.  </li>
+<li><strong>Methodology</strong>: Uses a sample of ~150,000 Glassdoor reviews from S&amp;P 1500 firms. Combines factor analysis (to extract latent outlook measures) with regression models to test associations between employee outlook and future disclosures.  </li>
+<li><strong>Results</strong>: Employee outlook predicts future income statement metrics (e.g., sales, gross margins), transitory items (e.g., restructuring charges), earnings surprises, and management forecast news.  </li>
+<li><strong>Discussion</strong>: Employees’ collective opinions chip away at management’s exclusive control over disclosures. Results are robust to controls for firm characteristics and other review components.  </li>
+<li><strong>Research Gaps/Areas for Improvement</strong>: Limited to U.S. firms; qualitative review content (e.g., text) was excluded. Future research could explore cross-country differences or integrate NLP for text analysis.  </li>
+<li><strong>Paper's Strengths and Weaknesses</strong>:  <ul>
+<li><em>Strengths</em>: Large dataset; novel focus on employee-driven disclosures; robust methodology.  </li>
+<li><em>Weaknesses</em>: Self-selection bias in reviews; inability to pinpoint exact timing of former employees’ departures.  </li>
+</ul>
+</li>
+<li><strong>Limitations and Future Research</strong>: Suggests examining non-U.S. contexts, longer-term horizons, and mechanisms linking employee sentiment to performance.</li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="2-variables-summary"><a class="toclink" href="#2-variables-summary">2. <strong>Variables Summary</strong></a><a class="headerlink" href="#2-variables-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Dependent Variables</strong>:  <ul>
+<li><em>Future Performance</em>: Sales, gross margins (GM), operating income (OpInc), net income (Income), scaled by assets.  </li>
+<li><em>Data Source</em>: Compustat.  </li>
+<li><em>Transitory Items</em>: Goodwill impairments (GWImp), write-downs (Writedown), restructuring charges (Restructure).  </li>
+<li><em>Data Source</em>: Compustat.  </li>
+<li><em>Earnings Surprise</em>: Difference between actual earnings and analyst consensus (IBES).  </li>
+<li><em>Management Forecast News</em>: Difference between management forecasts and analyst consensus (IBES).  </li>
+</ul>
+</li>
+<li><strong>Independent Variables</strong>:  <ul>
+<li><em>Explicit Outlook</em>: Employee-rated firm outlook (positive/neutral/negative).  </li>
+<li><em>Latent Outlook</em> (OutlookFactor): Derived from factor analysis of Glassdoor review components.  </li>
+<li><em>Data Source</em>: Glassdoor.com.  </li>
+</ul>
+</li>
+<li><strong>Control Variables</strong>:  <ul>
+<li>Firm size, age, profitability (ROA), stock returns, SG&amp;A ratio, workforce growth, return volatility, book-to-market ratio, analyst following, forecast dispersion.  </li>
+<li><em>Justification</em>: Standard controls for firm performance, risk, and information environment.  </li>
+<li><em>Data Sources</em>: Compustat, CRSP, IBES.  </li>
+</ul>
+</li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="3-methodology-summary"><a class="toclink" href="#3-methodology-summary">3. <strong>Methodology Summary</strong></a><a class="headerlink" href="#3-methodology-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Analytical Methods</strong>: Panel regressions with firm/quarter fixed effects; factor analysis (principal factoring with promax rotation).  </li>
+<li><strong>Model Equations</strong>:  <ul>
+<li><em>Future Performance</em>:<br />
+   ( \text{Performance}<em _text_controls="\text{controls">{t+1} = \beta_0 + \beta_1 \text{Outlook}_t + \beta</em> + \epsilon ).  }</li>
+<li><em>Earnings Surprise</em>:<br />
+   ( \text{EarningsSurprise}<em _text_controls="\text{controls">{t+1} = \beta_0 + \beta_1 \text{Outlook}_t + \beta</em> + \epsilon ).  }</li>
+</ul>
+</li>
+<li><strong>Identification Strategy</strong>: Uses time-stamped reviews to establish temporal precedence. Controls for past performance and firm characteristics.  </li>
+<li><strong>Robustness Tests</strong>:  <ul>
+<li>Excludes industries with high review volume (Business Services, Retail).  </li>
+<li>Tests alternative factor extraction methods (unrotated factors).  </li>
+</ul>
+</li>
+<li><strong>Endogeneity Tests</strong>: Controls for lagged performance and firm fixed effects.  </li>
+<li><strong>Data Sampling</strong>: 158,352 reviews (1,265 S&amp;P 1500 firms; 2012–2015).  </li>
+<li><strong>Software/Tools Used</strong>: Python (web scraping), Stata (regressions).  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="4-theory-summary"><a class="toclink" href="#4-theory-summary">4. <strong>Theory Summary</strong></a><a class="headerlink" href="#4-theory-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Name of Theory</strong>: Agency Theory, Information Asymmetry.  </li>
+<li><strong>Origin of Theory</strong>: Jensen &amp; Meckling (1976).  </li>
+<li><strong>Description of Theory</strong>: Conflicts arise between managers (agents) and shareholders (principals) due to information asymmetry.  </li>
+<li><strong>Application in Study</strong>: Employees’ social media posts reduce asymmetry by providing independent insights into firm prospects.  </li>
+<li><strong>Empirical Validation</strong>: Results align with theory—employee outlook predicts future disclosures, supporting the idea that non-executives hold valuable information.  </li>
+<li><strong>Competing Theories Considered</strong>: Stewardship theory (not directly tested).  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="5-data-source-summary"><a class="toclink" href="#5-data-source-summary">5. <strong>Data Source Summary</strong></a><a class="headerlink" href="#5-data-source-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Dependent Variables</strong>: Compustat (financials), IBES (earnings/forecasts).  </li>
+<li><strong>Independent Variables</strong>: Glassdoor.com (employee reviews).  </li>
+<li><strong>Control Variables</strong>: CRSP (returns), Compustat (firm characteristics).  </li>
+<li><strong>Temporal Coverage</strong>: 2012–2015.  </li>
+<li><strong>Sample Selection Criteria</strong>: S&amp;P 1500 firms with Glassdoor reviews; excludes incomplete reviews and former employees (in main tests).  </li>
+<li><strong>Sample Size</strong>: 158,352 reviews.  </li>
+<li><strong>Data Cleaning Procedures</strong>: Winsorized at 1%/99%; matched firm identifiers manually.  </li>
+<li><strong>Data Limitations</strong>: Survivorship bias (only firms with reviews); self-reported tenure/employment status.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="6-key-empirical-findings"><a class="toclink" href="#6-key-empirical-findings">6. <strong>Key Empirical Findings</strong></a><a class="headerlink" href="#6-key-empirical-findings" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Statistical vs. Economic Significance</strong>:  <ul>
+<li><em>Outlook</em>: 1 SD increase → 0.5% higher ROA (economically meaningful).  </li>
+</ul>
+</li>
+<li><strong>Magnitude Interpretation</strong>: Positive outlook reviews associated with 2.4% higher sales/assets.  </li>
+<li><strong>Cross-study Comparison</strong>: Consistent with Babenko &amp; Sen (2015) on employee information advantages.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="7-replication-materials"><a class="toclink" href="#7-replication-materials">7. <strong>Replication Materials</strong></a><a class="headerlink" href="#7-replication-materials" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Data Availability</strong>: Glassdoor data requires subscription; Compustat/CRSP/IBES via standard vendors.  </li>
+<li><strong>Code Repository</strong>: Not mentioned.  </li>
+<li><strong>Pre-registration</strong>: Not applicable.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="8-discipline-specific-enhancements"><a class="toclink" href="#8-discipline-specific-enhancements">8. <strong>Discipline-Specific Enhancements</strong></a><a class="headerlink" href="#8-discipline-specific-enhancements" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>GAAP/IFRS Standards</strong>: U.S. GAAP used for financial reporting.  </li>
+<li><strong>Corporate Governance Mechanism</strong>: Highlights erosion of management’s disclosure monopoly.  </li>
+<li><strong>Financial Regulation Context</strong>: Suggests social media platforms may warrant regulatory attention as disclosure channels.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="hypothesis-development"><a class="toclink" href="#hypothesis-development"><strong>Hypothesis Development</strong></a><a class="headerlink" href="#hypothesis-development" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>H1</strong>: Employee outlook predicts future corporate disclosures.  <ul>
+<li><em>Prediction Direction</em>: +  </li>
+<li><em>Supported?</em>: Yes.  </li>
+</ul>
+</li>
+</ul>
+            </main>
+        </div>
+        
+        <footer class="footer">
+            <p>Created by Yuqian Zhang (PhD)</p>
+        </footer>
+    </div>
+</body>
+</html>
+        

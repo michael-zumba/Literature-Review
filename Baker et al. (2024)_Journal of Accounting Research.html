@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diversity Washing</title>
+    
+        <style>
+        /* Modern Academic Paper Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            min-height: calc(100vh - 200px);
+        }
+        
+        .toc-sidebar {
+            width: 300px;
+            background: #f8f9fa;
+            border-right: 1px solid #e9ecef;
+            padding: 2rem 1.5rem;
+            position: sticky;
+            top: 0;
+            height: fit-content;
+            max-height: 100vh;
+            overflow-y: auto;
+        }
+        
+        .toc-sidebar h2 {
+            color: #495057;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .toc-sidebar ul {
+            list-style: none;
+        }
+        
+        .toc-sidebar li {
+            margin: 0.5rem 0;
+        }
+        
+        .toc-sidebar a {
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.3rem 0;
+        }
+        
+        .toc-sidebar a:hover {
+            color: #667eea;
+            padding-left: 0.5rem;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 2rem 3rem;
+            max-width: calc(100% - 300px);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: #2c3e50;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: #34495e;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: #667eea;
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+        
+        ul, ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        li {
+            margin: 0.5rem 0;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        em {
+            color: #667eea;
+            font-style: italic;
+        }
+        
+        blockquote {
+            border-left: 4px solid #667eea;
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            background: #f8f9fa;
+            font-style: italic;
+        }
+        
+        code {
+            background: #f1f3f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            color: #d63384;
+        }
+        
+        pre {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 1rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
+        
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #667eea, transparent);
+            margin: 2rem 0;
+        }
+        
+        .section-divider {
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .section-divider::before {
+            content: "◆ ◆ ◆";
+            color: #667eea;
+            font-size: 1.2rem;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .toc-sidebar {
+                width: 100%;
+                position: static;
+                max-height: none;
+            }
+            
+            .main-content {
+                max-width: 100%;
+                padding: 1.5rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .toc-sidebar {
+                display: none;
+            }
+            
+            .main-content {
+                max-width: 100%;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+        }
+        </style>
+        
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Diversity Washing</h1>
+            <div class="subtitle">Andrew C. Baker, David F. Larcker, Charles G. McClure, Durgesh Saraph, Edward M. Watts</div>
+        </header>
+        
+        <div class="content-wrapper">
+            <nav class="toc-sidebar">
+                <h2>Table of Contents</h2>
+                <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#1-literature-review-components">1. Literature Review Components</a></li>
+<li><a href="#2-variables-summary">2. Variables Summary</a></li>
+<li><a href="#3-methodology-summary">3. Methodology Summary</a></li>
+<li><a href="#4-theory-summary">4. Theory Summary</a></li>
+<li><a href="#5-data-source-summary">5. Data Source Summary</a></li>
+<li><a href="#6-key-empirical-findings">6. Key Empirical Findings</a></li>
+<li><a href="#7-replication-materials">7. Replication Materials</a></li>
+<li><a href="#8-discipline-specific-enhancements">8. Discipline-Specific Enhancements</a></li>
+</ul>
+</div>
+
+            </nav>
+            
+            <main class="main-content">
+                <h3 id="1-literature-review-components"><a class="toclink" href="#1-literature-review-components">1. <strong>Literature Review Components</strong></a><a class="headerlink" href="#1-literature-review-components" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Title</strong>: Diversity Washing  </li>
+<li><strong>Journal</strong>: <em>Journal of Accounting Research</em>  </li>
+<li><strong>Authors</strong>: Andrew C. Baker, David F. Larcker, Charles G. McClure, Durgesh Saraph, Edward M. Watts  </li>
+<li><strong>In-text Citation Format</strong>: Baker et al. (2024)  </li>
+<li><strong>Overview</strong>: This paper investigates whether U.S. publicly traded corporations opportunistically use voluntary disclosures about their commitments to employee diversity, equity, and inclusion (DEI) to misrepresent their actual hiring practices.  </li>
+<li><strong>Key Contribution to Field</strong>: Provides large-sample empirical evidence on discrepancies between firms' external DEI stances and their actual diversity metrics, coining the term "diversity washing." Highlights how such firms attract higher ESG ratings and investment despite poor DEI outcomes.  </li>
+<li><strong>Policy/Practical Implications</strong>: Calls for standardized, mandatory DEI disclosures and stronger regulatory enforcement to curb misleading ESG claims. Raises concerns about misallocation of ESG-focused capital.  </li>
+<li><strong>Methodology</strong>: Uses textual analysis of SEC filings (10-Ks, 8-Ks, proxy statements) to measure DEI discussion, paired with workforce diversity data from Revelio Labs. Employs regression analyses, Poisson models, and validation tests (e.g., EEOC violations, ESG ratings).  </li>
+<li><strong>Results</strong>: Firms with high DEI discussion but low diversity ("diversity washers") face more discrimination violations and negative human-capital events. They receive higher ESG ratings and attract more ESG-focused investors.  </li>
+<li><strong>Discussion</strong>: Diversity washing is linked to vague language, forward-looking statements without follow-through, and broader ESG misrepresentation (e.g., policies without targets).  </li>
+<li><strong>Research Gaps/Areas for Improvement</strong>: Limited to U.S. firms; reliance on Revelio Labs' diversity metrics (potential white-collar bias). Future research could explore global contexts or alternative diversity data sources.  </li>
+<li><strong>Paper's Strengths and Weaknesses</strong>:  <ul>
+<li><em>Strengths</em>: Novel large-sample evidence; robust validation tests; interdisciplinary relevance (accounting, finance, ESG).  </li>
+<li><em>Weaknesses</em>: Endogeneity concerns (diversity washing is self-selected); no causal identification.  </li>
+</ul>
+</li>
+<li><strong>Limitations and Future Research</strong>: Suggests examining non-U.S. markets, longitudinal effects of regulation, and investor reactions to diversity-washing exposure.</li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="2-variables-summary"><a class="toclink" href="#2-variables-summary">2. <strong>Variables Summary</strong></a><a class="headerlink" href="#2-variables-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Dependent Variable(s)</strong>:  <ul>
+<li><em>DEI Words (Aggregate)</em>: Count of DEI-related terms in SEC filings.  </li>
+<li><em>Measurement</em>: Dictionary-based textual analysis.  </li>
+<li><em>Source</em>: WRDS SEC EDGAR.  </li>
+<li><em>ESG Ratings</em>: Scores from Refinitiv/Sustainalytics.  </li>
+<li><em>Measurement</em>: Normalized ratings (0–100).  </li>
+<li><em>Source</em>: Refinitiv, Sustainalytics.  </li>
+</ul>
+</li>
+<li><strong>Independent Variable(s)</strong>:  <ul>
+<li><em>% Diversity</em>: Fraction of female/non-white employees.  </li>
+<li><em>Measurement</em>: Revelio Labs' workforce data.  </li>
+<li><em>Source</em>: Revelio Labs.  </li>
+<li><em>Diversity Washer</em>: Binary (1 if DEI discussion &gt; diversity percentile).  </li>
+</ul>
+</li>
+<li><strong>Control Variables</strong>: Firm size, profitability, volatility, industry/year fixed effects.  </li>
+<li><strong>Other Variables</strong>:  <ul>
+<li><em>EEOC Violations</em>: Discrimination penalties (GoodJobsFirst).  </li>
+<li><em>Forward-Looking Terms</em>: Count in DEI sentences (Bozanic et al. 2018 dictionary).  </li>
+</ul>
+</li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="3-methodology-summary"><a class="toclink" href="#3-methodology-summary">3. <strong>Methodology Summary</strong></a><a class="headerlink" href="#3-methodology-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Analytical Methods</strong>: Poisson regressions (DEI word counts), OLS (ESG ratings), logit (violations).  </li>
+<li><strong>Model Equations</strong>:  <ul>
+<li><em>DEI Words</em>: Poisson(β0 + β1 Diversity + β2 Controls + FE).  </li>
+<li><em>ESG Ratings</em>: OLS(β0 + β1 Diversity Washer + β2 Controls + FE).  </li>
+</ul>
+</li>
+<li><strong>Identification Strategy</strong>: Within-year percentile ranks to isolate abnormal DEI discussion.  </li>
+<li><strong>Robustness Tests</strong>: Alternative timing, dictionary expansions, entropy balancing.  </li>
+<li><strong>Endogeneity Tests</strong>: Future diversity hiring analyses (no aspirational improvements).  </li>
+<li><strong>Data Sampling</strong>: U.S. public firms, 2008–2021 (N ≈ 47,334 firm-years).  </li>
+<li><strong>Software/Tools</strong>: Stata, Python (sentenceBERT, ChatGPT for topic labeling).  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="4-theory-summary"><a class="toclink" href="#4-theory-summary">4. <strong>Theory Summary</strong></a><a class="headerlink" href="#4-theory-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Name of Theory</strong>: Agency Theory (Jensen &amp; Meckling 1976).  </li>
+<li><strong>Origin</strong>: Corporate governance literature.  </li>
+<li><strong>Description</strong>: Managers may misrepresent DEI to attract ESG investors, leveraging information asymmetry.  </li>
+<li><strong>Application in Study</strong>: Diversity washing as a managerial opportunism tool.  </li>
+<li><strong>Empirical Validation</strong>: Supported by higher ESG ratings/investment despite poor DEI outcomes.  </li>
+<li><strong>Competing Theories</strong>: Stakeholder theory (not supported; diversity washers harm employees/investors).  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="5-data-source-summary"><a class="toclink" href="#5-data-source-summary">5. <strong>Data Source Summary</strong></a><a class="headerlink" href="#5-data-source-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Dependent Variables</strong>:  <ul>
+<li><em>DEI Words</em>: SEC EDGAR.  </li>
+<li><em>Diversity Metrics</em>: Revelio Labs (U.S. employees).  </li>
+</ul>
+</li>
+<li><strong>Independent/Control Variables</strong>: Compustat, CRSP.  </li>
+<li><strong>Temporal Coverage</strong>: 2008–2021.  </li>
+<li><strong>Sample Size</strong>: ~5,000 firms, 47,334 firm-years.  </li>
+<li><strong>Data Limitations</strong>: Revelio data may skew toward white-collar roles; no international coverage.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="6-key-empirical-findings"><a class="toclink" href="#6-key-empirical-findings">6. <strong>Key Empirical Findings</strong></a><a class="headerlink" href="#6-key-empirical-findings" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Statistical vs Economic Significance</strong>:  <ul>
+<li>Diversity washers have 12% higher ESG ratings (<em>p</em> &lt; 0.01) but 0.5% lower future diversity (<em>p</em> &lt; 0.05).  </li>
+</ul>
+</li>
+<li><strong>Magnitude Interpretation</strong>: 1 SD increase in diversity washing → 19% more ESG fund ownership.  </li>
+<li><strong>Cross-study Comparison</strong>: Aligns with Liang et al. (2022) on selective diversity disclosures.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="7-replication-materials"><a class="toclink" href="#7-replication-materials">7. <strong>Replication Materials</strong></a><a class="headerlink" href="#7-replication-materials" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Data Availability</strong>: Revelio Labs (subscription), SEC EDGAR (public).  </li>
+<li><strong>Code Repository</strong>: Not mentioned (contact authors).  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="8-discipline-specific-enhancements"><a class="toclink" href="#8-discipline-specific-enhancements">8. <strong>Discipline-Specific Enhancements</strong></a><a class="headerlink" href="#8-discipline-specific-enhancements" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>GAAP/IFRS</strong>: Not directly addressed (focus on SEC disclosures).  </li>
+<li><strong>Corporate Governance</strong>: Board diversity disclosures analyzed.  </li>
+<li><strong>Financial Regulation</strong>: Highlights SEC’s role in ESG disclosure enforcement.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<p><strong>Hypothesis Development</strong>:<br />
+- <em>H1</em>: Firms with low diversity overstate DEI commitments in disclosures (+).<br />
+  - <em>Supported</em>: Yes (diversity washers have higher DEI discussion but lower actual diversity).  </p>
+<p><strong>General Guidance</strong>:<br />
+- Formatted in markdown with clear headings/indentation.<br />
+- Data sources bracketed (e.g., [[Compustat]]).<br />
+- Avoids opinions; focuses on analytical summaries.  </p>
+            </main>
+        </div>
+        
+        <footer class="footer">
+            <p>Created by Yuqian Zhang (PhD)</p>
+        </footer>
+    </div>
+</body>
+</html>
+        

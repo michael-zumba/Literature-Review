@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institutional Blockholders and Voluntary Disclosure</title>
+    
+        <style>
+        /* Modern Academic Paper Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            min-height: calc(100vh - 200px);
+        }
+        
+        .toc-sidebar {
+            width: 300px;
+            background: #f8f9fa;
+            border-right: 1px solid #e9ecef;
+            padding: 2rem 1.5rem;
+            position: sticky;
+            top: 0;
+            height: fit-content;
+            max-height: 100vh;
+            overflow-y: auto;
+        }
+        
+        .toc-sidebar h2 {
+            color: #495057;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .toc-sidebar ul {
+            list-style: none;
+        }
+        
+        .toc-sidebar li {
+            margin: 0.5rem 0;
+        }
+        
+        .toc-sidebar a {
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.3rem 0;
+        }
+        
+        .toc-sidebar a:hover {
+            color: #667eea;
+            padding-left: 0.5rem;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 2rem 3rem;
+            max-width: calc(100% - 300px);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: #2c3e50;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: #34495e;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: #667eea;
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+        
+        ul, ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        li {
+            margin: 0.5rem 0;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        em {
+            color: #667eea;
+            font-style: italic;
+        }
+        
+        blockquote {
+            border-left: 4px solid #667eea;
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            background: #f8f9fa;
+            font-style: italic;
+        }
+        
+        code {
+            background: #f1f3f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            color: #d63384;
+        }
+        
+        pre {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 1rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
+        
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #667eea, transparent);
+            margin: 2rem 0;
+        }
+        
+        .section-divider {
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .section-divider::before {
+            content: "◆ ◆ ◆";
+            color: #667eea;
+            font-size: 1.2rem;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .toc-sidebar {
+                width: 100%;
+                position: static;
+                max-height: none;
+            }
+            
+            .main-content {
+                max-width: 100%;
+                padding: 1.5rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .toc-sidebar {
+                display: none;
+            }
+            
+            .main-content {
+                max-width: 100%;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+        }
+        </style>
+        
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Institutional Blockholders and Voluntary Disclosure</h1>
+            <div class="subtitle">Xiaochi Ge, Pawel Bilinski, Arthur Kraft</div>
+        </header>
+        
+        <div class="content-wrapper">
+            <nav class="toc-sidebar">
+                <h2>Table of Contents</h2>
+                <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#1-literature-review-components">1. Literature Review Components</a></li>
+<li><a href="#2-variables-summary">2. Variables Summary</a></li>
+<li><a href="#3-methodology-summary">3. Methodology Summary</a></li>
+<li><a href="#4-theory-summary">4. Theory Summary</a></li>
+<li><a href="#5-data-source-summary">5. Data Source Summary</a></li>
+<li><a href="#6-key-empirical-findings">6. Key Empirical Findings</a></li>
+<li><a href="#7-replication-materials">7. Replication Materials</a></li>
+<li><a href="#8-discipline-specific-enhancements">8. Discipline-Specific Enhancements</a></li>
+</ul>
+</div>
+
+            </nav>
+            
+            <main class="main-content">
+                <h3 id="1-literature-review-components"><a class="toclink" href="#1-literature-review-components">1. <strong>Literature Review Components</strong></a><a class="headerlink" href="#1-literature-review-components" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Title</strong>: Institutional Blockholders and Voluntary Disclosure  </li>
+<li><strong>Journal</strong>: <em>European Accounting Review</em>  </li>
+<li><strong>Authors</strong>: Xiaochi Ge, Pawel Bilinski, Arthur Kraft  </li>
+<li><strong>In-text Citation Format</strong>: Ge et al. (2021)  </li>
+<li><strong>Overview</strong>: Examines how concentrated institutional ownership affects firms' voluntary disclosure practices, including management forecasts, conference calls, and 8-K filings.  </li>
+<li><strong>Key Contribution to Field</strong>:  <ul>
+<li>Documents a <em>negative</em> relationship between institutional blockholdings (≥5% ownership) and voluntary disclosure, contrasting prior findings that average institutional ownership <em>increases</em> disclosure.  </li>
+<li>Identifies two channels: (1) blockholders substitute private for public information access, and (2) passive blockholders reduce demand for disclosure.  </li>
+</ul>
+</li>
+<li><strong>Policy/Practical Implications</strong>: Highlights the trade-off between blockholder monitoring and corporate transparency, relevant for regulators assessing disclosure policies.  </li>
+<li><strong>Methodology</strong>:  <ul>
+<li>Uses panel data (2001–2015) with firm-quarter observations (N=104,765).  </li>
+<li>Employs logit/Poisson regressions, instrumental variables (Russell 3000 index inclusion), and robustness tests (e.g., Herfindahl index, board seats).  </li>
+</ul>
+</li>
+<li><strong>Results</strong>:  <ul>
+<li>A 1 SD increase in blockholdings reduces management forecast likelihood by 16.6%.  </li>
+<li>Effects are stronger when blockholders hold board seats or are passive investors.  </li>
+</ul>
+</li>
+<li><strong>Discussion</strong>: Challenges the assumption that all institutional investors uniformly demand more disclosure; blockholders’ concentrated stakes alter incentives.  </li>
+<li><strong>Research Gaps/Areas for Improvement</strong>: Limited to U.S. firms; cross-country comparisons could generalize findings.  </li>
+<li><strong>Paper's Strengths and Weaknesses</strong>:  <ul>
+<li><em>Strengths</em>: Robust identification (IV, fixed effects), multiple disclosure measures.  </li>
+<li><em>Weaknesses</em>: Potential residual endogeneity; passive blockholder classification may omit quasi-indexers.  </li>
+</ul>
+</li>
+<li><strong>Limitations and Future Research</strong>: Suggests examining blockholder heterogeneity (e.g., activist vs. passive) and non-U.S. settings.</li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="2-variables-summary"><a class="toclink" href="#2-variables-summary">2. <strong>Variables Summary</strong></a><a class="headerlink" href="#2-variables-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Dependent Variables</strong>:  <ul>
+<li><em>MF_occur</em>: Binary indicator for management forecasts (I/B/E/S).  </li>
+<li><em>MF_items</em>: Count of forecasted items (e.g., EPS, revenue).  </li>
+<li><em>Conference calls</em>: Binary indicator (Thomson Reuters StreetEvents).  </li>
+<li><em>8-K filings</em>: Count of voluntary filings (SEC).  </li>
+</ul>
+</li>
+<li><strong>Independent Variables</strong>:  <ul>
+<li><em>Block</em>: % shares held by institutional blockholders (≥5%; 13-F filings).  </li>
+<li><em>HHI</em>: Herfindahl index of institutional ownership concentration.  </li>
+</ul>
+</li>
+<li><strong>Control Variables</strong>:  <ul>
+<li>Firm size, leverage, ROA, analyst coverage, board independence, etc. (Compustat/CRSP/BoardEx).  </li>
+</ul>
+</li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="3-methodology-summary"><a class="toclink" href="#3-methodology-summary">3. <strong>Methodology Summary</strong></a><a class="headerlink" href="#3-methodology-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Analytical Methods</strong>: Logit/Poisson regressions, 2SLS IV.  </li>
+<li><strong>Model Equations</strong>:  <ul>
+<li>Logit: <code>P(MF_occur) = α0 + α1Block + α2IO + Controls + FE + ε</code>.  </li>
+<li>IV: Russell 3000 inclusion instruments for blockholdings.  </li>
+</ul>
+</li>
+<li><strong>Identification Strategy</strong>:  <ul>
+<li>Exploits Russell index reconstitutions for exogenous variation.  </li>
+<li>Tests cross-sectional heterogeneity (e.g., analyst coverage, fiscal Q4 busyness).  </li>
+</ul>
+</li>
+<li><strong>Robustness Tests</strong>: Alternative blockholder definitions, fixed effects, changes regressions.  </li>
+<li><strong>Data Sampling</strong>: 2001–2015; excludes financials; winsorized at 0.1%/99.9%.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="4-theory-summary"><a class="toclink" href="#4-theory-summary">4. <strong>Theory Summary</strong></a><a class="headerlink" href="#4-theory-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Name of Theory</strong>: Agency Theory (Jensen &amp; Meckling, 1976).  </li>
+<li><strong>Application in Study</strong>: Blockholders mitigate agency costs but reduce public disclosure due to private access.  </li>
+<li><strong>Competing Theories</strong>: Stewardship theory (not supported; passive blockholders discourage disclosure).  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="5-data-source-summary"><a class="toclink" href="#5-data-source-summary">5. <strong>Data Source Summary</strong></a><a class="headerlink" href="#5-data-source-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Sources</strong>: Compustat, CRSP, I/B/E/S, BoardEx, Thomson Reuters, SEC.  </li>
+<li><strong>Temporal Coverage</strong>: 2001–2015.  </li>
+<li><strong>Sample Size</strong>: 104,765 firm-quarters.  </li>
+<li><strong>Limitations</strong>: Survivorship bias; U.S.-centric.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="6-key-empirical-findings"><a class="toclink" href="#6-key-empirical-findings">6. <strong>Key Empirical Findings</strong></a><a class="headerlink" href="#6-key-empirical-findings" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Economic Significance</strong>: Blockholdings reduce disclosure likelihood more than non-blockholdings increase it.  </li>
+<li><strong>Cross-study Comparison</strong>: Contrasts with Boone &amp; White (2015), who find passive ownership <em>increases</em> disclosure.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="7-replication-materials"><a class="toclink" href="#7-replication-materials">7. <strong>Replication Materials</strong></a><a class="headerlink" href="#7-replication-materials" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Data Availability</strong>: Subscription-based (Compustat, BoardEx).  </li>
+<li><strong>Code Repository</strong>: Not disclosed.  </li>
+</ul>
+<div class="section-divider"></div>
+
+<h3 id="8-discipline-specific-enhancements"><a class="toclink" href="#8-discipline-specific-enhancements">8. <strong>Discipline-Specific Enhancements</strong></a><a class="headerlink" href="#8-discipline-specific-enhancements" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Corporate Governance</strong>: Blockholder board seats amplify disclosure reduction.  </li>
+<li><strong>Financial Regulation</strong>: Highlights unintended consequences of ownership concentration on transparency.  </li>
+</ul>
+            </main>
+        </div>
+        
+        <footer class="footer">
+            <p>Created by Yuqian Zhang (PhD)</p>
+        </footer>
+    </div>
+</body>
+</html>
+        
